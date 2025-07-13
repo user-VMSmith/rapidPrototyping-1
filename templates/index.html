@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- Simple interface for sending prompts to the Flask app -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>LM Studio Chat Demo</title>
+  <!-- Inline styling for simplicity -->
   <style>
     * {
       box-sizing: border-box;
@@ -75,18 +77,24 @@
 </head>
 <body>
 
+<!-- Chat form -->
 <form method="POST">
+  <!-- Main chat area -->
   <div class="main">
     <h2>Response:</h2>
+    <!-- Area where the API response is displayed -->
     <div class="output">{{ response }}</div>
 
+    <!-- User prompt input -->
     <textarea name="prompt" placeholder="Type your prompt here..." rows="6">{{ prompt }}</textarea><br>
     <button type="submit">Submit</button>
   </div>
 
+  <!-- Developer tools sidebar -->
   <div class="sidebar">
     <h4>Dev Tools</h4>
     <label for="system">System Prompt:</label><br>
+    <!-- Allows adjusting the system message -->
     <textarea name="system" rows="6">{{ system }}</textarea>
   </div>
 </form>
