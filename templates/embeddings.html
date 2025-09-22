@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LM Studio Embeddings Demo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    form {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    textarea {
+      width: 100%;
+      font-family: monospace;
+      font-size: 0.95rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .output {
+      background: #eee;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      white-space: pre-wrap;
+      min-height: 60px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<form method="POST">
+  <div class="main">
+    <h2>Similarity: {{ similarity }}</h2>
+    <div class="output">
+      <strong>Text 1:</strong> {{ text1 }}<br><br>
+      <strong>Text 2:</strong> {{ text2 }}
+    </div>
+
+    <textarea name="text1" placeholder="First text chunk..." rows="4">{{ text1 }}</textarea><br>
+    <textarea name="text2" placeholder="Second text chunk..." rows="4">{{ text2 }}</textarea><br>
+    <button type="submit">Compare</button>
+  </div>
+</form>
+
+<p><a href="{{ url_for('index') }}">Back to Chat</a></p>
+
+</body>
+</html>
